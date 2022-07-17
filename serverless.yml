@@ -1,0 +1,18 @@
+service: nbb-serverless-example
+
+frameworkVersion: '2 || 3'
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs16.x
+  architecture: arm64
+  memorySize: 128
+
+functions:
+  foo:
+    handler: index.handler
+    events:
+      - http:
+          path: foo
+          method: post
